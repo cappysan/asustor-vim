@@ -1,0 +1,27 @@
+{
+  "general": {
+    "architecture": "x86-64",
+    "conflicts": [],
+    "depends": [],
+    "email": "julien@cappysan.dev",
+    "firmware": "5.0.0",
+    "maintainer": "Cappysan",
+    "name": "vim",
+    "package": "cappysan-vim",
+    "version": "9.1.1730.r1",
+    "website": "https://gitlab.com/cappysan/asustor/vim"
+  },
+  "register": {
+    "symbolic-link": {
+      "/bin": [
+        "bin/ex",
+        "bin/rview",
+        "bin/rvim",
+        "bin/view",
+        "bin/vim",
+        "bin/vimdiff",
+        "bin/xxd"
+      ]
+    }
+  }
+}
