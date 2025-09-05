@@ -16,7 +16,7 @@ make distclean || true
   --prefix=/usr/local/AppCentral/cappysan-vim \
   --with-local-dir=/opt/x86_64-asustor-linux-gnu \
   --with-tlib=ncurses \
-  --with-features=normal \
+  --with-features=huge \
   --enable-multibyte \
   --disable-icon-cache-update \
   --disable-desktop-database-update \
@@ -34,5 +34,6 @@ cp -rv ${tmppath}/usr/local/AppCentral/cappysan-vim/{bin,share} apk/
 
 rm -vfr apk/share/{applications,icons,man}
 rm -vfr apk/share/vim/vim91/tutor
-rm -v f apk/share/vim/vim91/{README.txt,vimrc_example.vim}
+rm -vf  apk/share/vim/vim91/{README.txt,vimrc_example.vim}
+rm -vf  apk/bin/vimtutor
 rm -fr ${tmppath}

@@ -3,4 +3,4 @@
 all: apk
 
 apk: ## build the apk package
-	bin/apkg-tools_py3.py create apk --destination .
+	fakeroot bin/apkg.py create apk --destination .

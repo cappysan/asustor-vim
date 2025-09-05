@@ -1,0 +1,45 @@
+" Instead of editing this file, edit `~/.vimrc` instead, or look into
+" git cloning vim extensions directly into ~/.config/vim/pack/plugins/start
+"
+" Many of these options are taken from Debian's /etc/vimrc
+" and /usr/share/vim/vim*/debian.vim
+"
+set nocompatible
+set backspace=indent,eol,start
+
+" Now we set some defaults for the editor
+set history=50 " keep 50 lines of command line history
+set ruler      " show the cursor position all the time
+
+" modelines have historically been a source of security/resource
+" vulnerabilities -- disable by default, even when 'nocompatible' is set
+set nomodeline
+
+" Suffixes that get lower priority when doing tab completion for filenames.
+" These are files we are not likely to want to edit or read.
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
+" We know xterm-debian is a color terminal
+if &term =~ "xterm-debian" || &term =~ "xterm-xfree86" || &term =~ "xterm-color" 
+  set t_Co=16
+  set t_Sf=[3%dm
+  set t_Sb=[4%dm
+endif
+
+" Vim5 and later versions support syntax highlighting. Uncommenting the next
+" line enables syntax highlighting by default.
+syntax on
+
+" If using a dark background within the editing area and syntax highlighting
+" turn on this option as well
+set background=dark
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Source a global configuration file if available
+if filereadable("/usr/local/AppCentral/cappysan-vim/share/vim")
+  source /usr/local/AppCentral/cappysan-vim/share/vim
+endif
+
