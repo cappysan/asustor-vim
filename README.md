@@ -30,7 +30,7 @@ In order to builds `ncurses`, `vim`, and the APK, you first must have a working 
 
 ### Cloning <a name="cloning"></a>
 
-Once this project is cloned, update the repository to download the submodules:
+Once this project is cloned, update the repository to download the submodule:
 
 ~~~
 git submodule update --init --recursive
