@@ -4,16 +4,16 @@ Asustor APK package for VIM, the advanced text editor.
 
 
 # Table of contents
-1. [Installation](#installation)
-2. [Building](#building)
-    a. [cloning](#cloning)
-    a. [requirements](#requirements)
-    a. [ncurses](#ncurses)
-    b. [vim](#vim)
-    c. [apk](#apk)
-3. [Support & Sponsorship](#support)
-4. [License](#license)
-5. [Links](#links)
+1. [Installation](#installation)  
+2. [Building](#building)  
+    a. [cloning](#cloning)  
+    a. [requirements](#requirements)  
+    a. [ncurses](#ncurses)  
+    b. [vim](#vim)  
+    c. [apk](#apk)  
+3. [Support & Sponsorship](#support)  
+4. [License](#license)  
+5. [Links](#links)  
 
 
 ## Installation <a name="installation"></a>

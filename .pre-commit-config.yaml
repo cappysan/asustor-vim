@@ -33,6 +33,8 @@ repos:
       - id: requirements-txt-fixer
       - id: trailing-whitespace
         name: "fix trailing whitespace"
+        args:
+          - "--markdown-linebreak-ext=md"
 
   - repo: "https://github.com/codespell-project/codespell"
     rev: v2.4.1
