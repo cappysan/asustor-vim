@@ -5,6 +5,7 @@
     "depends": [],
     "email": "julien@cappysan.dev",
     "firmware": "5.0.0",
+    "lock_enable": false,
     "maintainer": "Cappysan",
     "name": "vim",
     "package": "cappysan-vim",
