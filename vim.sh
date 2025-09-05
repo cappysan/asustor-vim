@@ -5,7 +5,11 @@ set -eu -o pipefail
 export PATH="/opt/x86_64-asustor-linux-gnu/bin:$(pwd)/opt/x86_64-asustor-linux-gnu/bin/:$PATH"
 export CFLAGS="-O2"
 export CXXFLAGS="-O2"
-export LDFLAGS="-w -s -L$(pwd)/_build/opt/x86_64-asustor-linux-gnu/lib"
+
+export LDFLAGS="-w -s -L$(pwd)/_build/opt/x86_64-asustor-linux-gnu/lib -lrt"
+if test -f /usr/lib/x86_64-linux-gnu/librt.a || test -f /usr/lib/x86_64-linux-gnu/librt.so.1; then
+  export LDFLAGS="${LDFLAGS} -lrt"
+fi
 
 cd vim
 make distclean || true

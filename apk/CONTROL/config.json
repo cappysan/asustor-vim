@@ -14,13 +14,13 @@
   "register": {
     "symbolic-link": {
       "/bin": [
-        "bin/ex",
-        "bin/rview",
-        "bin/rvim",
-        "bin/view",
-        "bin/vim",
-        "bin/vimdiff",
-        "bin/xxd"
+        "ex",
+        "rview",
+        "rvim",
+        "view",
+        "vim",
+        "vimdiff",
+        "xxd"
       ]
     }
   }

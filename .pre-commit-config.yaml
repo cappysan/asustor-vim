@@ -10,13 +10,10 @@ repos:
       - id: check-added-large-files
       - id: check-case-conflict
       - id: check-executables-have-shebangs
+      - id: check-json
       - id: check-merge-conflict
       - id: check-shebang-scripts-are-executable
       - id: check-symlinks
-      - id: check-toml
-      - id: check-json
-      - id: pretty-format-json
-        args: ["--autofix", "--indent", "2"]
       - id: check-vcs-permalinks
       - id: check-yaml
         exclude: ".gitlab"
@@ -31,6 +28,8 @@ repos:
         name: "fix mixed line ending"
         args:
           - "--fix=lf"
+      - id: pretty-format-json
+        args: ["--autofix", "--indent", "2"]
       - id: requirements-txt-fixer
       - id: trailing-whitespace
         name: "fix trailing whitespace"
@@ -40,6 +39,6 @@ repos:
     hooks:
     - id: codespell
       name: "run codespell"
-      exclude: "bin/apkg-tools_py3.py"
+      exclude: "bin/apkg.py"
       additional_dependencies:
         - tomli

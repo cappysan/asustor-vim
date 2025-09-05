@@ -26,7 +26,7 @@ The APK application will also be made available on [https://www.asustorapps.org/
 
 ## Building <a name="building"></a>
 
-In order to builds `ncurses`, `vim`, and the APK, you first must have a working cross compiler toolchain. Please refer to [the toolchain procject](https://gitlab.com/cappysan/asustor/toolchain) to build your cross compiler. 
+In order to builds `ncurses`, `vim`, and the APK, you first must have a working cross compiler toolchain. Please refer to [the toolchain procject](https://gitlab.com/cappysan/asustor/toolchain) to build your cross compiler.
 
 
 ### Cloning <a name="cloning"></a>

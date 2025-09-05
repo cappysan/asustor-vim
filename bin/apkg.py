@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # Copyright (c) 2021-2023 Asustor Systems, Inc. All Rights Reserved.
 
-# -*- coding: utf-8 -*-
-
 import argparse
 import csv
 import glob
@@ -18,21 +16,6 @@ import zipfile
 __author__ = "Walker Lee <walkerlee@asustor.com>"
 __copyright__ = "Copyright (C) 2021-2023  ASUSTOR Systems, Inc.  All Rights Reserved."
 __version__ = "0.1.0.post1"
-__abs_path__ = os.path.abspath(sys.argv[0])
-__program__ = os.path.basename(__abs_path__)
-
-
-def find_developer(app):
-    developer = None
-
-    if os.path.exists("apkg-developer-mapping.csv"):
-        with open("apkg-developer-mapping.csv") as f:
-            for row in csv.reader(f):
-                if row[0] == app:
-                    developer = row[1]
-                    break
-
-    return developer
 
 
 class Chdir:
@@ -115,18 +98,18 @@ class Apkg:
             with zipfile.ZipFile(apk_file, "r") as apk_zip:
                 file_list = apk_zip.namelist()
         except zipfile.BadZipfile:
-            print("File is not an apk file: %s" % (apk_file))
+            print(f"error: file is not an apk file: {apk_file}", file=sys.stderr)
             return False
 
         # check apk file contents
         if not file_list:
-            print("File is empty: %s" % (apk_file))
+            print(f"error: file is empty: {apk_file}", file=sys.stderr)
             return False
 
         result = True
         for key, value in self.apk_file_contents.items():
             if value not in file_list:
-                print("Can't find file in apk file: %s" % (value))
+                print(f"error: can't find file in apk file: {value}", file=sys.stderr)
                 result = False
 
         return result
@@ -162,6 +145,7 @@ class Apkg:
 
     def __get_app_info(self, control_dir, apkg_version):
         if apkg_version == "1.0":
+            # TODO:
             return self.__get_app_info_v1(control_dir)
         elif apkg_version == "2.0" or apkg_version == "2.1":
             return self.__get_app_info_v2(control_dir)
@@ -314,15 +298,13 @@ class Apkg:
 
         app_new_info = {}
 
-        developer = find_developer(app_old_info["app"]["package"])
-
         app_new_info["general"] = {}
         app_new_info["general"]["package"] = app_old_info["app"]["package"]
         app_new_info["general"]["name"] = app_old_info["app"]["name"]
         app_new_info["general"]["version"] = app_old_info["app"]["version"]
         app_new_info["general"]["depends"] = app_old_info["app"]["depends"]
         app_new_info["general"]["conflicts"] = app_old_info["app"]["conflicts"]
-        app_new_info["general"]["developer"] = app_old_info["app"]["website"] if (developer is None) else developer
+        app_new_info["general"]["developer"] = app_old_info["app"]["website"]
         app_new_info["general"]["maintainer"] = app_old_info["app"]["maintainer"]
         app_new_info["general"]["email"] = app_old_info["app"]["email"]
         app_new_info["general"]["website"] = app_old_info["app"]["website"]

@@ -20,7 +20,7 @@ set nomodeline
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
 " We know xterm-debian is a color terminal
-if &term =~ "xterm-debian" || &term =~ "xterm-xfree86" || &term =~ "xterm-color" 
+if &term =~ "xterm-debian" || &term =~ "xterm-xfree86" || &term =~ "xterm-color"
   set t_Co=16
   set t_Sf=[3%dm
   set t_Sb=[4%dm
@@ -42,4 +42,3 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 if filereadable("/usr/local/AppCentral/cappysan-vim/share/vim")
   source /usr/local/AppCentral/cappysan-vim/share/vim
 endif
-
