@@ -3,7 +3,7 @@
 Asustor APK package for VIM, the advanced text editor.
 
 
-# Table of contents
+## Table of contents
 1. [Installation](#installation)  
 2. [Building](#building)  
     a. [cloning](#cloning)  
