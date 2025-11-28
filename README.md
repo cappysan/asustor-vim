@@ -20,7 +20,7 @@ Asustor APK package for VIM, the advanced text editor.
 
 This section is currently a placeholder until Asustor validates the package and adds it to the Asustor App Central.
 
-The APK application will also be made available on [https://www.asustorapps.org/](https://www.asustorapps.org/)
+The APK application is not available as an Asustor App Central application as Asustor does not accept command line tools.
 
 
 ## Building <a name="building"></a>
